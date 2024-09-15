@@ -14,7 +14,7 @@ body {
     background-color: #9cf1f7;
 }
 
-.quote-container {
+.container {
     background-color: #1b93b1;
     border-radius: 10px;
     padding: 30px;
@@ -23,11 +23,11 @@ body {
     max-width: 400px;
 }
 
-.quote-box {
+.box {
     margin-bottom: 20px;
 }
 
-.quote-text {
+.text {
     font-size: 1.5rem;
     margin-bottom: 10px;
     color: #f4f4f4;
@@ -45,7 +45,7 @@ body {
     margin-top: 20px;
 }
 
-.quote-btn {
+.btn {
     background-color: #ff6347;
     color: #f4f4f4;
     border: none;
@@ -56,7 +56,7 @@ body {
     transition: background-color 0.3s ease-in-out;
 }
 
-.quote-btn:hover {
+.btn:hover {
     background-color: #ff4a33;
 }
 
@@ -77,7 +77,7 @@ body {
     background-color: #45a0491a;
 }
 
-/* Icon Styling */
+
 .read-aloud-btn .icon {
     width: 20px;
     height: 20px;
