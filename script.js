@@ -1,4 +1,4 @@
-// Quotes Array
+
 const quotes = [
     { 
         quote: "The hardest choices requires the strongest wills", 
@@ -30,48 +30,34 @@ const quotes = [
     }
 ];
 
-// Get Elements
+
+// Get elements by ID
 const quoteText = document.getElementById('quote');
 const authorText = document.getElementById('author');
-const newQuoteBtn = document.getElementById('new-quote');
-const readAloudBtn = document.getElementById('read-aloud');
+const newQuoteButton = document.getElementById('quote');
+const readAloudButton = document.getElementById('read-aloud');
 
-
-// Generate Random Quote
+// Function to get a random quote
 function getRandomQuote() {
     const randomIndex = Math.floor(Math.random() * quotes.length);
     const randomQuote = quotes[randomIndex];
-    
-    // Slide out animation
-    quoteText.classList.add('fade-out');
-    authorText.classList.add('fade-out');
 
-    setTimeout(() => {
-        // Set the new quote and author
-        quoteText.textContent = `"${randomQuote.quote}"`;
-        authorText.textContent = `- ${randomQuote.author}`;
-        
-        // Slide in animation
-        quoteText.classList.remove('fade-out');
-        authorText.classList.remove('fade-out');
-    }, 500);  // 500ms delay for the fade-out effect
+    quoteText.textContent = `"${randomQuote.quote}"`;
+    authorText.textContent = `- ${randomQuote.author}`;
 }
 
+// Function to read the quote aloud
 function readQuoteAloud() {
     const quote = quoteText.textContent;
     const author = authorText.textContent;
 
     const utterance = new SpeechSynthesisUtterance(`${quote} ${author}`);
-    utterance.voice = speechSynthesis.getVoices()[6];  // Use the default voice
-    
-    speechSynthesis.speak(utterance);  // Speak the quote
+    speechSynthesis.speak(utterance);
 }
 
-// Add event listener to "Read Aloud" button
-readAloudBtn.addEventListener('click', readQuoteAloud);
-
-// Add Event Listener to Button
-newQuoteBtn.addEventListener('click', getRandomQuote);
+// Event listeners
+newQuoteButton.addEventListener('click', getRandomQuote);
+readAloudButton.addEventListener('click', readQuoteAloud);
 
 // Automatically change the quote every 10 seconds
-setInterval(getRandomQuote, 10000);
+setInterval(getRandomQuote, 8000);

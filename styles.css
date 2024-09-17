@@ -39,7 +39,7 @@ body {
     color: #f4f4f4;
 }
 
-.buttons {
+.quote-btn {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
